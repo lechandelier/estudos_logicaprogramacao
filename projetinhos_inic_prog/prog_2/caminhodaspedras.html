@@ -1,0 +1,31 @@
+<meta charset="UTF-8">
+
+<input/>
+<button>Compare com o meu segredo</button>
+
+<script>
+
+    var segredo /*Essa parte é executada antes do palpite ser digitado*/ = Math.round/*3 - Arredonda o número gerado em 2, retirando a dízima periódica e transformando em um número natural*/(Math.random/*1 - Gera um número racional*/ () * 10/*2-O número racional gerado é multiplicado por 10 pra avancar uma casa decimal, tornando-se um número com dízima periódica)*/;
+
+    var input/*6 - Variável que vai ganhar o valor que a pessoa digitou no campo que aparecerá para ela na tela*/ = document.querySelector/*5 - Busca tags no mundo HTML para trazer ao mundo JavaScript*/("input"/*4 - Atributo do mundo HTML trazido para dentro do mundo JavaScript, pois é onde será digitado o palpite da adivinhação*/);
+    input.focus();/*7 -  Ativa o cursor dentro do campo (input) sem precisar clicar dentro dele. Quando o programa rodar, o campo vai estar pronto para ter um valor inserido*/
+
+    function verifica() {/*8 - Função que faz o jogo acontecer, comparando o que foi gerado aleatoriamente com o palpite digitado no campo (input).
+                            Só será aativada quando a pessoa clicar no botão (Etapa 21)*/
+
+        if/*9 - Se...*/(input.value/*10 - O valor colocado no input (palpite)...*/ ==/*...11 - for igual...*/ segredo /*...12 - ao número que foi gerado aleatoriamente...*/) {
+            alert/*13 - ...exibe...*/(/*14 - ...mensagem de acerto >>>*/"Você ACERTOU!"); /*15 - ...isso porque o -if- vai gerar um valor verdadeiro: if(true). " É verdade que o valor gerado aleatoriamente é igual o valor que a pessoa digitou? Sim, é verdade! (true)", então será exibida a mensagem contida no if(true)*/
+        } else /*16 - Se o número digitado como palpite for diferente (!=) do número gerado em var segredo, o valor de if será falso: if(false)...*/ {
+            /*17 - O que fará com que, nesse caso, o alerta contido em if(false) seja >>>*/alert("Você ERROU!!!!!!!!");
+        }
+
+        input.value = "";/*18 - Depois da mensagem (alert) ser exibida à pessoa que deu o palpite, o campo para digitar ficará limpo, sem ter a necessidade de apagar o número digitado no palpite dado*/
+        input.focus();/*19 - Novamente, o cursor será ativado, como na etapa 7*/
+    }
+
+    /*Toda essa parte acontece nos bastidores. Se a pessoa acertou ou errou, o programa guardará o resultado até que o botão "Compare meu segredo" seja clicado. Não há nada que exiba automaticamente qualquer mensagem a quem está executando o programa*/
+
+    var button/*20 - Cria a tarefa a ser executada quando o botão "Compare meu segredo" for clicado*/= document.querySelector("button");
+    button.onclick/*21 - Especifica o que deverá acontecer quando o botão for clicado pela pessoa que deu o palpite...*/ = verifica/*22 - Função (conjunto de instruções) que será executado ao clicar do botão (Etapa 8 - comparação do palpite e exibição da mensagem de erro ou acerto)*/;
+
+</script>

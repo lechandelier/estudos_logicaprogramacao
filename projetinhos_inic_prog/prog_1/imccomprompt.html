@@ -1,0 +1,27 @@
+<meta charset="UTF-8">
+<script>
+
+	function pulaLinha() {
+	    document.write("<br><hr><br>");
+	}
+
+	function mostra(frase) {
+	    document.write(frase);
+	    pulaLinha();
+	}
+
+	function imcCalc(peso, alt){//peso: primeira variável utilizada pela função que calcula;
+		//alt: segunda variável utilizada pela função que calcula;
+		return peso / (alt*alt); //o que será feito com as variáveis de altura e peso - operação aritmética; mostrar essa operação aritmética em HTML;
+		//return - Devolve o cálculo que foi feito nessa função; O valor resultante da expressão aritmética é entregue.
+	}
+
+
+	var nome = prompt("Informe seu nome");
+	var peso = prompt(nome + ", " + "informe seu peso");
+	var alt = prompt(nome + ", " + "informe sua altura");
+	var imc = (peso / (alt*alt));
+
+	mostra(nome + ", seu IMC é de " + imc + ".");
+
+</script>

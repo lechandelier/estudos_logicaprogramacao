@@ -1,0 +1,33 @@
+<meta charset="UTF-8">
+<script>
+
+	function pulaLinha() {
+	    document.write("<br><hr><br>");
+	}
+
+	function mostra(frase) {
+	    document.write(frase);
+	    pulaLinha();
+	}
+
+	function imcCalc(peso, alt){//peso: primeira variável utilizada pela função que calcula;
+		//alt: segunda variável utilizada pela função que calcula;
+		var imcCalc = peso / (alt*alt); //o que será feito com as variáveis de altura e peso - operação aritmética; mostrar essa operação aritmética em HTML;
+		return imcCalc //Devolve o cálculo que foi feito nessa função; O valor resultante da expressão aritmética é entregue.
+	}
+
+	var pesoPessoa = 70;
+	var alturaPessoa = 1.77;
+	var imc1 = imcCalc(70, 1.77);//Utilizará o valor de altura e peso para realizar a operação em imgCalc, resultando em imc1=valor;
+
+	var peso2 = 83;
+	var alt2 = 1.85;
+	var imc2 = imcCalc(83, 1.85);//Utilizará o valor de altura e peso para realizar a operação em imgCalc, resultando em imc2=valor;
+
+	mostra(imc1);//Calcula(imcCalc), retorna o resultado para ser mostrado com quebra-traço-quebra;
+	mostra(imc2);//Calcula(imcCalc), retorna o resultado para ser mostrado com quebra-traço-quebra;
+	
+	var imcTotal=imc1 + imc2;
+	mostra(imcTotal);
+
+</script>
